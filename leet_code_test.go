@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -89,6 +90,93 @@ func Test_FirstMissingPositive(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			assert.Equal(t, tt.expected, firstMissingPositive(tt.in))
+		})
+	}
+}
+
+func Test_IsMatch(t *testing.T) {
+	tests := []struct {
+		str      string
+		pattern  string
+		expected bool
+	}{
+		{
+			str:      "",
+			pattern:  "***?",
+			expected: false,
+		}, {
+			str:      "",
+			pattern:  "***",
+			expected: true,
+		}, {
+			str:      "",
+			pattern:  "*",
+			expected: true,
+		}, {
+			str:      "",
+			pattern:  "?",
+			expected: false,
+		}, {
+			str:      "adda",
+			pattern:  "ad?",
+			expected: false,
+		}, {
+			str:      "adda",
+			pattern:  "ad?ad",
+			expected: false,
+		}, {
+			str:      "",
+			pattern:  "",
+			expected: true,
+		}, {
+			str:      "aa",
+			pattern:  "a",
+			expected: false,
+		}, {
+			str:      "aa",
+			pattern:  "*",
+			expected: true,
+		}, {
+			str:      "aa",
+			pattern:  "?a",
+			expected: true,
+		}, {
+			str:      "aa",
+			pattern:  "?",
+			expected: false,
+		}, {
+			str:      "cb",
+			pattern:  "?a",
+			expected: false,
+		}, {
+			str:      "caecfvacd",
+			pattern:  "?a*?cd",
+			expected: true,
+		}, {
+			str:      "caecfvacdcdcd",
+			pattern:  "?a*?cd",
+			expected: true,
+		}, {
+			str:      "caacd",
+			pattern:  "?a*?cd",
+			expected: true,
+		}, {
+			str:      "bbbbbbbabaab",
+			pattern:  "b*b*ab**ba",
+			expected: false,
+		}, {
+			str:      "bbbbbbbabbaabbabbbbaaabbabbabaaabbababbbabbbabaaabaab",
+			pattern:  "b*b*ab**ba*b**b***bba",
+			expected: false,
+		}, {
+			str:      "bbbbbbbabbaabbabbbbaaabbabbabaaabbababbbabbbabaaabbba",
+			pattern:  "b*b*ab**ba*b**b***bba",
+			expected: true,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(fmt.Sprintf("(%s)/(%s)(%v)", tt.str, tt.pattern, tt.expected), func(t *testing.T) {
+			assert.Equal(t, tt.expected, isMatch(tt.str, tt.pattern))
 		})
 	}
 }
