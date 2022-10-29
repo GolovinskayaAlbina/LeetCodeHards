@@ -180,3 +180,56 @@ func Test_IsMatch(t *testing.T) {
 		})
 	}
 }
+
+func Test_SolveNQueens(t *testing.T) {
+	tests := []struct {
+		in       int
+		expected [][]string
+	}{
+		{
+			in: 4,
+			expected: [][]string{{
+				".Q..",
+				"...Q",
+				"Q...",
+				"..Q.",
+			}, {
+				"..Q.",
+				"Q...",
+				"...Q",
+				".Q.."}},
+		},
+		{
+			in:       1,
+			expected: [][]string{{"Q"}},
+		},
+	}
+	for _, tt := range tests {
+		t.Run(fmt.Sprintf("N count: %d", tt.in), func(t *testing.T) {
+			assert.Equal(t, tt.expected, solveNQueens(tt.in))
+		})
+	}
+}
+
+func Test_TotalNQueens(t *testing.T) {
+	tests := []struct {
+		in       int
+		expected int
+	}{
+		{
+			in:       5,
+			expected: 10,
+		}, {
+			in:       4,
+			expected: 2,
+		}, {
+			in:       1,
+			expected: 1,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(fmt.Sprintf("N count: %d", tt.in), func(t *testing.T) {
+			assert.Equal(t, tt.expected, totalNQueens(tt.in))
+		})
+	}
+}

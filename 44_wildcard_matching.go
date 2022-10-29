@@ -25,6 +25,8 @@ func isMatch(s string, p string) bool {
 	return res
 }
 
+// checkIfMatch - checks if string and pattern match
+// returns match flag and end of string flag
 func checkIfMatch(s, p string, sPos, pPos int) (bool, bool) {
 	for pPos < len(p) {
 		if p[pPos] == '*' {
@@ -46,12 +48,10 @@ func checkIfMatch(s, p string, sPos, pPos int) (bool, bool) {
 				// string was ended
 				return false, false
 			}
-			fmt.Printf("%d[%c]:%d[%c]", sPos, s[sPos], pPos, p[pPos])
 			if p[pPos] != '?' && s[sPos] != p[pPos] {
-				fmt.Printf(": false\n")
 				return false, false
 			}
-			fmt.Printf(": true\n")
+			fmt.Printf("%d[%c]:%d[%c] - true\n", sPos, s[sPos], pPos, p[pPos])
 			sPos += 1
 		}
 		pPos += 1

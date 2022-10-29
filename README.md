@@ -18,3 +18,9 @@
 [link to leetcode.com](https://leetcode.com/problems/wildcard-matching/)
 
 ![44-res](./img/44-res.png)
+
+## N-Queens
+
+[link to leetcode.com](https://leetcode.com/problems/n-queens/)
+
+![51](./img/51.png)
