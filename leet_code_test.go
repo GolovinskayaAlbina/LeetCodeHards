@@ -233,3 +233,42 @@ func Test_TotalNQueens(t *testing.T) {
 		})
 	}
 }
+
+func Test_GetPermutation(t *testing.T) {
+	tests := []struct {
+		inN      int
+		inK      int
+		expected string
+	}{
+		{
+			inN:      3,
+			inK:      2,
+			expected: "132",
+		}, {
+			inN:      3,
+			inK:      3,
+			expected: "213",
+		}, {
+			inN:      2,
+			inK:      2,
+			expected: "21",
+		}, {
+			inN:      8,
+			inK:      6593,
+			expected: "24186735",
+		}, {
+			inN:      4,
+			inK:      9,
+			expected: "2314",
+		}, {
+			inN:      3,
+			inK:      1,
+			expected: "123",
+		},
+	}
+	for _, tt := range tests {
+		t.Run(fmt.Sprintf("N:%d,K:%d,(%s)", tt.inN, tt.inK, tt.expected), func(t *testing.T) {
+			assert.Equal(t, tt.expected, getPermutation(tt.inN, tt.inK))
+		})
+	}
+}

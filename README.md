@@ -24,3 +24,7 @@
 [link to leetcode.com](https://leetcode.com/problems/n-queens/)
 
 ![51](./img/51.png)
+
+## Permutation Sequence
+
+[link to leetcode.com](https://leetcode.com/problems/permutation-sequence/)
