@@ -10,7 +10,7 @@
 //              In this case, 6 units of rain water (blue section) are being trapped.
 //
 //////////////////////////////////////////////////////////////////////////////////////////
-package main
+package hard
 
 import "fmt"
 
