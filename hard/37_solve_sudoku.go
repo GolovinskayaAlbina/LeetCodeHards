@@ -67,9 +67,6 @@ func solveSudokuLine(row, col int, board [][]byte) bool {
 }
 
 func getPossibleVals(row, col int, board [][]byte) map[byte]struct{} {
-	if board[row][col] != '.' {
-		panic("not supported")
-	}
 	possibleVals := map[byte]struct{}{'1': {}, '2': {}, '3': {}, '4': {}, '5': {}, '6': {}, '7': {}, '8': {}, '9': {}}
 	for i := 0; i < len(board); i++ {
 		delete(possibleVals, board[row][i])
