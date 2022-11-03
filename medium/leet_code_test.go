@@ -67,3 +67,30 @@ func Test_MinMutation(t *testing.T) {
 		})
 	}
 }
+
+func Test_LongestPalindrome(t *testing.T) {
+	tests := []struct {
+		name     string
+		words    []string
+		expected int
+	}{
+		{
+			name:     "Example 1",
+			words:    []string{"lc", "cl", "gg"},
+			expected: 6,
+		}, {
+			name:     "Example 2",
+			words:    []string{"ab", "ty", "yt", "lc", "cl", "ab"},
+			expected: 8,
+		}, {
+			name:     "Example 3",
+			words:    []string{"cc", "ll", "xx"},
+			expected: 2,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			assert.Equal(t, tt.expected, longestPalindrome(tt.words))
+		})
+	}
+}
