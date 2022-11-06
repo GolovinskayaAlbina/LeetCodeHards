@@ -10,6 +10,9 @@
 | 52   | N-Queens II | [link to leetcode.com](https://leetcode.com/problems/n-queens-ii/) | [code](./hard/51_n_queens.go)               | <span style="color:red">**Hard**</span>      ||
 | 60   | Permutation Sequence | [link to leetcode.com](https://leetcode.com/permutation-sequence/) | [code](./hard/60_permutation_sequence.go)   | <span style="color:red">**Hard**</span>      ||
 | 65   | Valid Number | [link to leetcode.com](https://leetcode.com/problems/valid-number/) | [code](./hard/65_valid_number.go)   | <span style="color:red">**Hard**</span>      ||
+| 68   | Valid Number | [link to leetcode.com](https://leetcode.com/problems/text-justification/) | [code](./hard/68_text_justification.go)   | <span style="color:red">**Hard**</span>      ||
+| 212  | Valid Number | [link to leetcode.com](https://leetcode.com/problems/word-search-ii/) | [code](./hard/212_word_search_II.go)   | <span style="color:red">**Hard**</span>      |:calendar:|
+| 899  | Valid Number | [link to leetcode.com](https://leetcode.com/problems/orderly-queue/) | [code](./hard/899_orderly_queue.go)   | <span style="color:red">**Hard**</span>      |:calendar:|
 | 1706 | Where Will the Ball Fall | [link to leetcode.com](https://leetcode.com/problems/where-will-the-ball-fall/) | [code](./medium/1706_where_will_the_ball_fall.go) | <span style="color:yellow">**Medium**</span> |:calendar:|
 | 433  | Minimum Genetic Mutation | [link to leetcode.com](https://leetcode.com/problems/minimum-genetic-mutation/) | [code](./medium/433_minimum_genetic_mutation.go) | <span style="color:yellow">**Medium**</span> |:calendar:|
 | 2131 | Longest Palindrome by Concatenating Two Letter Words | [link to leetcode.com](https://leetcode.com/problems/longest-palindrome-by-concatenating-two-letter-words/) | [code](./medium/2131_longest_palindrome_by_concatenating_two_letter_words.go) | <span style="color:yellow">**Medium**</span> |:calendar:|
