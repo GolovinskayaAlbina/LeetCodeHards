@@ -35,17 +35,6 @@ func (r *row) String(isLast bool) string {
 		}
 		return res[:len(res)-1] + strings.Repeat(" ", r.Max-r.minLen())
 	}
-	//s := make([]string, r.spaces())
-	//for i, _ := range s {
-	//	s[i] = " "
-	//}
-	//for i := 0; leave > 0; leave-- {
-	//	if i == len(s) {
-	//		i = 0
-	//	}
-	//	s[i] += " "
-	//	i++
-	//}
 	spacesCount := r.spaces()              // 5
 	spacesToAdd := r.Max - r.minLen()      // 12
 	div := spacesToAdd / spacesCount       // 2

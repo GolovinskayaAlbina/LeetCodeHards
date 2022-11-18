@@ -409,3 +409,271 @@ func Test_OrderlyQueue(t *testing.T) {
 		})
 	}
 }
+
+func Test_MinDistance(t *testing.T) {
+	tests := []struct {
+		in1      string
+		in2      string
+		expected int
+	}{
+		{
+			in1:      "horseros",
+			in2:      "ros",
+			expected: 5,
+		}, {
+			in1:      "ab",
+			in2:      "bc",
+			expected: 2,
+		}, {
+			in1:      "ab",
+			in2:      "a",
+			expected: 1,
+		}, {
+			in1:      "a",
+			in2:      "ab",
+			expected: 1,
+		}, {
+			in1:      "intention",
+			in2:      "execution",
+			expected: 5,
+		}, {
+			in1:      "horse",
+			in2:      "ros",
+			expected: 3,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(fmt.Sprintf("%s->%s", tt.in1, tt.in2), func(t *testing.T) {
+			assert.Equal(t, tt.expected, minDistance(tt.in1, tt.in2))
+		})
+	}
+}
+
+func Test_MinWindow(t *testing.T) {
+	tests := []struct {
+		in1      string
+		in2      string
+		expected string
+	}{
+		{
+			in1:      "coobdafceeaxab",
+			in2:      "abc",
+			expected: "bdafc",
+		}, {
+			in1:      "ADOBECODEBANC",
+			in2:      "ABC",
+			expected: "BANC",
+		}, {
+			in1:      "wegdtzwabazduwwdysdetrrctotpcepalxdewzezbfewbabbseinxbqqplitpxtcwwhuyntbtzxwzyaufihclztckdwccpeyonumbpnuonsnnsjscrvpsqsftohvfnvtbphcgxyumqjzltspmphefzjypsvugqqjhzlnylhkdqmolggxvneaopadivzqnpzurmhpxqcaiqruwztroxtcnvhxqgndyozpcigzykbiaucyvwrjvknifufxducbkbsmlanllpunlyohwfsssiazeixhebipfcdqdrcqiwftutcrbxjthlulvttcvdtaiwqlnsdvqkrngvghupcbcwnaqiclnvnvtfihylcqwvderjllannflchdklqxidvbjdijrnbpkftbqgpttcagghkqucpcgmfrqqajdbynitrbzgwukyaqhmibpzfxmkoeaqnftnvegohfudbgbbyiqglhhqevcszdkokdbhjjvqqrvrxyvvgldtuljygmsircydhalrlgjeyfvxdstmfyhzjrxsfpcytabdcmwqvhuvmpssingpmnpvgmpletjzunewbamwiirwymqizwxlmojsbaehupiocnmenbcxjwujimthjtvvhenkettylcoppdveeycpuybekulvpgqzmgjrbdrmficwlxarxegrejvrejmvrfuenexojqdqyfmjeoacvjvzsrqycfuvmozzuypfpsvnzjxeazgvibubunzyuvugmvhguyojrlysvxwxxesfioiebidxdzfpumyon",
+			in2:      "ozgzyywxvtublcl",
+			expected: "tcnvhxqgndyozpcigzykbiaucyvwrjvknifufxducbkbsmlanl",
+		}, {
+			in1:      "a",
+			in2:      "b",
+			expected: "",
+		}, {
+			in1:      "a",
+			in2:      "a",
+			expected: "a",
+		}, {
+			in1:      "a",
+			in2:      "aa",
+			expected: "",
+		},
+	}
+	for _, tt := range tests {
+		t.Run(fmt.Sprintf("%s->%s", tt.in1, tt.in2), func(t *testing.T) {
+			assert.Equal(t, tt.expected, minWindow(tt.in1, tt.in2))
+		})
+	}
+}
+
+func Test_LargestRectangleArea(t *testing.T) {
+	tests := []struct {
+		in       []int
+		expected int
+	}{
+		{
+			in:       []int{0, 0, 1, 2, 3, 4, 0, 2, 2, 3, 2, 0, 3, 1, 4, 8},
+			expected: 8,
+		}, {
+			in:       []int{3, 2, 2, 2, 0, 0, 0, 0},
+			expected: 8,
+		}, {
+			in:       []int{0, 0, 0, 0, 1},
+			expected: 1,
+		}, {
+			in:       []int{1},
+			expected: 1,
+		}, {
+			in:       []int{0},
+			expected: 0,
+		}, {
+			in:       []int{10, 11, 3},
+			expected: 20,
+		}, {
+			in:       []int{2, 1, 5, 6, 2, 3},
+			expected: 10,
+		}, {
+			in:       []int{2, 4},
+			expected: 4,
+		}, {
+			in:       []int{2, 5, 3, 2},
+			expected: 8,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(fmt.Sprintf("%d", tt.expected), func(t *testing.T) {
+			assert.Equal(t, tt.expected, largestRectangleArea(tt.in))
+		})
+	}
+}
+
+func Test_MaximalRectangle(t *testing.T) {
+	tests := []struct {
+		in       [][]byte
+		expected int
+	}{
+		{
+			in: [][]byte{
+				{'0', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '0'},
+				{'1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1'},
+				{'1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '0', '1'},
+				{'0', '1', '1', '1', '1', '1', '1', '1', '0', '1', '1', '1', '1'},
+				{'1', '1', '1', '1', '1', '1', '1', '1', '0', '1', '1', '1', '1'}},
+			expected: 35,
+		}, {
+			in: [][]byte{
+				{'0', '1', '1', '0', '0', '1', '0', '1', '0', '1'},
+				{'0', '0', '1', '0', '1', '0', '1', '0', '1', '0'},
+				{'1', '0', '0', '0', '0', '1', '0', '1', '1', '0'},
+				{'0', '1', '1', '1', '1', '1', '1', '0', '1', '0'},
+				{'0', '0', '1', '1', '1', '1', '1', '1', '1', '0'},
+				{'1', '1', '0', '1', '0', '1', '1', '1', '1', '0'},
+				{'0', '0', '0', '1', '1', '0', '0', '0', '1', '0'},
+				{'1', '1', '0', '1', '1', '0', '0', '1', '1', '1'},
+				{'0', '1', '0', '1', '1', '0', '1', '0', '1', '1'}},
+			expected: 10,
+		}, {
+			in:       [][]byte{{'0'}},
+			expected: 0,
+		}, {
+			in:       [][]byte{{'1'}},
+			expected: 1,
+		}, {
+			in: [][]byte{
+				{'1', '0', '1', '0', '0'},
+				{'1', '0', '1', '1', '1'},
+				{'1', '1', '1', '1', '1'},
+				{'1', '0', '0', '1', '0'}},
+			expected: 6,
+		}, {
+			in: [][]byte{
+				{'1', '1', '1', '0', '1', '1', '1', '1'},
+				{'1', '1', '1', '0', '0', '0', '0', '1'},
+				{'1', '1', '1', '1', '1', '1', '1', '1'},
+				{'0', '0', '0', '1', '1', '1', '1', '1'},
+				{'0', '0', '0', '1', '1', '1', '1', '1'},
+				{'0', '0', '1', '1', '1', '1', '1', '1'},
+				{'0', '0', '0', '0', '0', '0', '0', '1'},
+				{'0', '0', '0', '0', '0', '0', '0', '1'}},
+			expected: 20,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(fmt.Sprintf("%d", tt.expected), func(t *testing.T) {
+			assert.Equal(t, tt.expected, maximalRectangle(tt.in))
+		})
+	}
+}
+
+func Test_IsScramble(t *testing.T) {
+	tests := []struct {
+		s1       string
+		s2       string
+		expected bool
+	}{
+		{
+			s1:       "great",
+			s2:       "eargt",
+			expected: true,
+		}, {
+			s1:       "great",
+			s2:       "rgeat",
+			expected: true,
+		}, {
+			s1:       "abcde",
+			s2:       "caebd",
+			expected: false,
+		}, {
+			s1:       "a",
+			s2:       "a",
+			expected: true,
+		}, {
+			s1:       "abcdbdacbdac",
+			s2:       "bdacabcdbdac",
+			expected: true,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(fmt.Sprintf("%s->%s", tt.s1, tt.s2), func(t *testing.T) {
+			assert.Equal(t, tt.expected, isScramble(tt.s1, tt.s2))
+		})
+	}
+}
+
+func Test_IsOrderPrinter(t *testing.T) {
+	p := Constructor()
+	p.AddNum(1)
+	assert.Equal(t, 1.0, p.FindMedian())
+	p.AddNum(2)
+	assert.Equal(t, 1.5, p.FindMedian())
+	p.AddNum(3)
+	assert.Equal(t, 2.0, p.FindMedian())
+	p.AddNum(1)
+	p.AddNum(1)
+	p.AddNum(1)
+	p.AddNum(0)
+	p.AddNum(5)
+	assert.Equal(t, 1.0, p.FindMedian())
+	p.AddNum(100)
+	assert.Equal(t, 1.0, p.FindMedian())
+	p.AddNum(0)
+	assert.Equal(t, 1.0, p.FindMedian())
+	p.AddNum(0)
+	assert.Equal(t, 1.0, p.FindMedian())
+	p.AddNum(0)
+	assert.Equal(t, 1.0, p.FindMedian())
+	p.AddNum(0)
+	assert.Equal(t, 1.0, p.FindMedian())
+	p.AddNum(0)
+	assert.Equal(t, 1.0, p.FindMedian())
+	p.AddNum(0)
+	assert.Equal(t, 1.0, p.FindMedian())
+	p.AddNum(0)
+	assert.Equal(t, 0.5, p.FindMedian())
+
+	p = Constructor()
+	p.AddNum(6)
+	assert.Equal(t, 6.0, p.FindMedian())
+	p.AddNum(10)
+	assert.Equal(t, 8.0, p.FindMedian())
+	p.AddNum(2)
+	assert.Equal(t, 6.0, p.FindMedian())
+	p.AddNum(6)
+	assert.Equal(t, 6.0, p.FindMedian())
+	p.AddNum(5)
+	assert.Equal(t, 6.0, p.FindMedian())
+	p.AddNum(0)
+	assert.Equal(t, 5.5, p.FindMedian())
+	p.AddNum(6)
+	assert.Equal(t, 6.0, p.FindMedian())
+	p.AddNum(3)
+	assert.Equal(t, 5.5, p.FindMedian())
+	p.AddNum(1)
+	assert.Equal(t, 5.0, p.FindMedian())
+	p.AddNum(0)
+	assert.Equal(t, 4.0, p.FindMedian())
+	p.AddNum(0)
+	assert.Equal(t, 3.0, p.FindMedian())
+}
